@@ -5,11 +5,17 @@ import com.stomp.finalproject.listeners.LoginClickListener;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginActivity extends Activity {
+	
+	private EditText telefone ;
+	public static final int TELEFONE_REQUEST_CODE = 0;
+	public static final String TELEFONE_IDENTIFIER = "telefone";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +36,15 @@ public class LoginActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.login, menu);
 		return true;
+	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(requestCode == TELEFONE_REQUEST_CODE){
+			if (resultCode == RESULT_OK) {
+				telefone.setText((String) data.getExtras().get(TELEFONE_IDENTIFIER));
+			}
+		}
+		
 	}
 	
 	

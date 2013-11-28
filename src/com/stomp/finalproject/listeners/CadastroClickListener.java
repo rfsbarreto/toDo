@@ -1,18 +1,20 @@
 package com.stomp.finalproject.listeners;
 
 import com.stomp.finalproject.R;
-import android.content.Context;
-import android.support.v4.app.NavUtils;
+import com.stomp.finalproject.activitys.*;
+
+import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 public class CadastroClickListener implements OnClickListener{
 	
-	private Context context;
+	private CadastroActivity cadastroActivity;
 
-	public CadastroClickListener(Context context) {
-		this.context = context;
+	public CadastroClickListener(CadastroActivity cadastroActivity) {
+		this.cadastroActivity = cadastroActivity;
 	}
 
 	@Override
@@ -22,7 +24,11 @@ public class CadastroClickListener implements OnClickListener{
 		switch (viewId) {
 		case R.id.btn_cancelar:
 			Log.v("stomp","Click cancelar cadastro.");
-			NavUtils.navigateUpFromSameTask(null);
+			
+			break;
+		case R.id.btn_cadastrar:
+			Log.v("stomp","Click cadastrar.");
+			retornarLoginResult();
 			break;
 
 		default:
@@ -31,4 +37,10 @@ public class CadastroClickListener implements OnClickListener{
 		
 	}
 
+	protected void retornarLoginResult(){
+		Intent resultIntent = new Intent();
+		resultIntent.putExtra(LoginActivity.TELEFONE_IDENTIFIER, true);
+		this.cadastroActivity.setResult(Activity.RESULT_OK, resultIntent);
+		this.cadastroActivity.finish();
+	}
 }

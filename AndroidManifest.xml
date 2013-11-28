@@ -26,6 +26,10 @@
             android:name="com.stomp.finalproject.activitys.CadastroActivity"
             android:label="@string/title_activity_cadastro" >
         </activity>
+        <activity
+            android:name="com.stomp.finalproject.activitys.ListaActivity"
+            android:label="@string/title_activity_lista" >
+        </activity>
     </application>
 
 </manifest>

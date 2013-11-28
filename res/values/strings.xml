@@ -13,5 +13,6 @@
     <string name="cancelar">Cancelar</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="title_activity_cadastro">Cadastro</string>
+    <string name="title_activity_lista">ListaActivity</string>
 
 </resources>

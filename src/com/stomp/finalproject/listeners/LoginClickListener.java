@@ -2,8 +2,9 @@ package com.stomp.finalproject.listeners;
 
 import com.stomp.finalproject.R;
 import com.stomp.finalproject.activitys.CadastroActivity;
+import com.stomp.finalproject.activitys.LoginActivity;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
@@ -11,10 +12,11 @@ import android.view.View.OnClickListener;
 
 public class LoginClickListener implements OnClickListener {
 	
-	private Context context;
+	private LoginActivity activity;
+	
 
-	public LoginClickListener(Context context) {
-		this.context = context;
+	public LoginClickListener(LoginActivity activity) {
+		this.activity = activity;
 	}
 
 	@Override
@@ -33,8 +35,12 @@ public class LoginClickListener implements OnClickListener {
 	}
 
 	protected void startCadastroActivity() {
-		Intent i = new Intent(context, CadastroActivity.class);
-		context.startActivity(i);
+		Intent i = new Intent(activity, CadastroActivity.class);
+		activity.startActivityForResult(i,LoginActivity.TELEFONE_REQUEST_CODE);
+	}
+	
+	protected void startListaActivity(){
+	
 	}
 
 }
