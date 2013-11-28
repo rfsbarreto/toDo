@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Final Project</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="splash_description">Splash image</string>
+    <string name="telefone">Telefone</string>
+    <string name="senha">Senha</string>
+    <string name="login">Login</string>
+    <string name="nao_e_cadastrado">não é cadastrado?</string>
+    <string name="email">E-mail</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="title_activity_cadastro">Cadastro</string>
+
+</resources>
